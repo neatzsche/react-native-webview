@@ -1402,7 +1402,7 @@ RCTAutoInsetsProtocol>
                     decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
 {
   WKNavigationResponsePolicy policy = WKNavigationResponsePolicyAllow;
-  if (_onHttpError && navigationResponse.forMainFrame) {
+  if (_onHttpError) {
     if ([navigationResponse.response isKindOfClass:[NSHTTPURLResponse class]]) {
       NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
       NSInteger statusCode = response.statusCode;
